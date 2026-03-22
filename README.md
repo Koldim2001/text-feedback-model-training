@@ -38,7 +38,7 @@
 
 **Запуск тритона с уже обученной моделью:**
 ```bash
-docker-compose up --build   
+docker-compose up -d --build
 ```
 
 **Обучение:** Откройте train_notebook.ipynb — там предобработка данных, объяснение токенизатора, обучение и экспорт в ONNX.
