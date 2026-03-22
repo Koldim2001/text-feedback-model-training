@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # Тритон для инференса моделей
+  triton:
+    container_name: triton
+    image: nvcr.io/nvidia/tritonserver:24.01-py3
+    ports:
+      - 8000:8000  # HTTP endpoint for inference
+      - 8001:8001  # GRPC endpoint for inference
+      - 8002:8002  # Metrics endpoint for Prometheus
+    restart: always
+    volumes:
+      - ./triton/models:/models
+    command: ["tritonserver", "--model-store=/models"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+              count: 1
