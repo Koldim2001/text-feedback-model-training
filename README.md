@@ -52,4 +52,4 @@ docker-compose up -d --build
 
 Пошаговый разбор всех этапов проекта:
 
-👉 **[Смотреть видео-туториал]()**
+👉 **[Смотреть видео-туториал](https://www.youtube.com/watch?v=RFfZ1dWuxeY)**
