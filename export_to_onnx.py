@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 from transformers import AutoModel, AutoTokenizer
 
-# ---------------------- Ваш класс модели (без изменений) ----------------------
 class E5Classifier(nn.Module):
     def __init__(self, model_name='intfloat/multilingual-e5-small'):
         super().__init__()
@@ -86,7 +85,7 @@ def export_onnx(checkpoint_path, output_path="model.onnx", max_length=64):
 # ---------------------- Запуск ----------------------
 if __name__ == "__main__":
     export_onnx(
-        checkpoint_path="best_model.pth",   # путь к вашему .pth
+        checkpoint_path="best_model.pth",   # путь к .pth
         output_path="model.onnx",
         max_length=64
     )
